@@ -259,6 +259,56 @@ p {
     cursor: pointer;
 }
 
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-bg-darker);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    clip-path: circle(0px at top right);
+    transition: clip-path 0.5s ease-in-out;
+}
+
+.mobile-menu-overlay.active {
+    clip-path: circle(150% at top right);
+}
+
+.menu-mobile-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.mobile-nav-link {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+}
+
+.btn-mobile-nav {
+    margin-top: 1rem;
+}
+
 /* ==========================================================================
    Hero Section
    ========================================================================== */
@@ -278,6 +328,10 @@ p {
     width: 100%;
     height: 100%;
     z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Align to bottom */
 }
 
 .hero-bg img {
@@ -291,6 +345,10 @@ p {
     transition: transform 10s ease-out;
 }
 
+.hero-img-mobile {
+    display: none;
+}
+
 .hero.parallax-active .hero-bg img {
     transform: scale(1);
 }
@@ -302,9 +360,13 @@ p {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, rgba(14, 14, 14, 0.95) 0%, rgba(14, 14, 14, 0.7) 40%, rgba(14, 14, 14, 0.1) 100%);
+    z-index: 1;
+    /* Ensure overlay is above hero bg but below content */
 }
 
 .hero-content {
+    position: relative;
+    z-index: 2;
     width: 50%;
     max-width: 640px;
     /* 50% de 1280 */
@@ -1273,8 +1335,25 @@ p {
         margin: 0 auto 2rem;
     }
 
+    .hero-img-desktop {
+        display: none !important;
+    }
+
+    .hero-img-mobile {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: bottom;
+        margin-top: auto;
+    }
+
+    .hero-bg {
+        background-color: var(--color-bg-dark);
+    }
+
     .hero-overlay {
-        background: linear-gradient(180deg, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.5) 50%, rgba(17, 17, 17, 1) 100%);
+        background: linear-gradient(180deg, var(--color-bg-dark) 0%, rgba(17, 17, 17, 0.7) 30%, rgba(17, 17, 17, 0) 100%);
     }
 
     .grid-3 {

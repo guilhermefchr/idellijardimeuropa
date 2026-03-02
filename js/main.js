@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
-       1. Sticky Header Functionality
+       1. Sticky Header & Mobile Menu Functionality
        ========================================================================== */
     const header = document.getElementById('header');
+    const mobileMenuBtn = document.querySelector('.menu-mobile-btn');
+    const mobileMenuOverlay = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.querySelector('.menu-mobile-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .btn-mobile-nav');
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -10,6 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             header.classList.remove('scrolled');
         }
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    });
+
+    const closeMobileMenu = () => {
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
     });
 
     /* ==========================================================================
