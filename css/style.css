@@ -328,13 +328,11 @@ p {
     width: 100%;
     height: 100%;
     z-index: -1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    /* Align to bottom */
+    background-color: var(--color-bg-dark);
+    /* Fundo preenchido para quando a imagem mobile não cobrir tudo */
 }
 
-.hero-bg img {
+.hero-img-desktop {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -349,7 +347,7 @@ p {
     display: none;
 }
 
-.hero.parallax-active .hero-bg img {
+.hero.parallax-active .hero-img-desktop {
     transform: scale(1);
 }
 
@@ -359,7 +357,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(14, 14, 14, 0.95) 0%, rgba(14, 14, 14, 0.7) 40%, rgba(14, 14, 14, 0.1) 100%);
+    background: none;
     z-index: 1;
     /* Ensure overlay is above hero bg but below content */
 }
@@ -1320,19 +1318,34 @@ p {
         display: block;
     }
 
+    .hero {
+        align-items: flex-start;
+        padding-top: 10vh;
+    }
+
     .hero-content {
         width: 100%;
         text-align: center;
+        position: relative;
+        z-index: 5;
+        /* Ensure content is above the image */
+        padding-top: 0;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         text-align: center;
     }
 
     .hero-subtitle {
         text-align: center;
-        margin: 0 auto 2rem;
+        margin: 0 auto 1.5rem;
+        font-size: 1rem;
+    }
+
+    .hero-cta {
+        display: flex;
+        justify-content: center;
     }
 
     .hero-img-desktop {
@@ -1341,19 +1354,31 @@ p {
 
     .hero-img-mobile {
         display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
         width: 100%;
         height: auto;
+        /* Aumenta a altura máxima para aproximar da área do botão */
+        max-height: 50vh;
         object-fit: cover;
-        object-position: bottom;
-        margin-top: auto;
+        /* Focaliza melhor no centro onde geralmente as pessoas estão */
+        object-position: center;
+        z-index: 1;
+        /* Keep the image below text and header */
+        /* Degradê aplicado diretamente na imagem para criar continuidade */
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
     }
 
     .hero-bg {
         background-color: var(--color-bg-dark);
+        z-index: 0;
     }
 
     .hero-overlay {
-        background: linear-gradient(180deg, var(--color-bg-dark) 0%, rgba(17, 17, 17, 0.7) 30%, rgba(17, 17, 17, 0) 100%);
+        display: none;
+        /* Não precisamos mais da overlay, a imagem tem seu próprio degradê */
     }
 
     .grid-3 {
