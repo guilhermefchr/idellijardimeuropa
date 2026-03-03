@@ -1,0 +1,17 @@
+{
+  "name": "idelli-ambientes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@microsoft/clarity": "^1.0.2",
+    "serve": "^14.2.5",
+    "sharp": "^0.34.5"
+  }
+}

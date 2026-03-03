@@ -17,7 +17,16 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Phosphor Icons (for modern UI icons) -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Import Map para o Microsoft Clarity -->
+    <script type="importmap">
+        {
+            "imports": {
+                "@microsoft/clarity": "./node_modules/@microsoft/clarity/index.js"
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -26,7 +35,7 @@
     <header class="header" id="header">
         <div class="container header-content">
             <a href="#" class="logo-link">
-                <img src="Assets/Imagens Idélli/IDELLI-JARDIM-EUROPA-BRANCO-300x98.png" alt="Idélli Jardim Europa"
+                <img src="Assets/Imagens Idélli/IDELLI-JARDIM-EUROPA-BRANCO-300x98.webp" alt="Idélli Jardim Europa"
                     class="logo">
             </a>
 
@@ -60,9 +69,9 @@
     <section class="hero">
         <div class="hero-bg">
             <div class="hero-overlay"></div>
-            <img src="Assets/Imagens Idélli/CAPA HERO.png" alt="Ambiente planejado luxuoso Idélli"
+            <img src="Assets/Imagens Idélli/CAPA HERO.webp" alt="Ambiente planejado luxuoso Idélli"
                 class="hero-img-desktop">
-            <img src="Assets/Imagens Idélli/CAPA HERO MOBILE.png" alt="Ambiente planejado luxuoso Idélli"
+            <img src="Assets/Imagens Idélli/CAPA HERO MOBILE.webp" alt="Ambiente planejado luxuoso Idélli"
                 class="hero-img-mobile">
         </div>
 
@@ -139,7 +148,8 @@
             <div class="bento-grid">
                 <!-- Main Featured Item -->
                 <div class="bento-item bento-large fade-in-up">
-                    <img src="Assets/Imagens Idélli/Sala_01.jpeg" alt="Cozinha Planejada Idélli">
+                    <img src="Assets/Imagens Idélli/Sala_01.webp" alt="Cozinha Planejada Idélli" loading="lazy"
+                        decoding="async">
                     <div class="bento-overlay">
                         <h3>O Coração da Casa</h3>
                         <p class="bento-desc text-light-muted">Ambientes integrados que unem estética sofisticada e
@@ -150,7 +160,7 @@
 
                 <!-- Secondary Items -->
                 <div class="bento-item fade-in-up delay-1">
-                    <img src="Assets/Imagens Idélli/Detalhe idelli.jpeg" alt="Detalhe Marcenaria Planejada"
+                    <img src="Assets/Imagens Idélli/Detalhe idelli.webp" alt="Detalhe Marcenaria Planejada"
                         style="object-position: center;">
                     <div class="bento-overlay">
                         <h3>Atenção aos Detalhes</h3>
@@ -161,7 +171,8 @@
                 </div>
 
                 <div class="bento-item fade-in-up delay-2">
-                    <img src="Assets/Imagens Idélli/Quarto_01.png" alt="Living Planejado">
+                    <img src="Assets/Imagens Idélli/Quarto_01.webp" alt="Living Planejado" loading="lazy"
+                        decoding="async">
                     <div class="bento-overlay">
                         <h3>Conforto Íntimo</h3>
                         <p class="bento-desc text-light-muted">O luxo das suítes e dormitórios refletido na escolha
@@ -172,7 +183,7 @@
 
                 <!-- Footer of Bento Grid -->
                 <div class="bento-item bento-wide fade-in-up delay-1">
-                    <img src="Assets/Imagens Idélli/Quarto_02.jpeg" alt="Banho Planejado"
+                    <img src="Assets/Imagens Idélli/Quarto_02.webp" alt="Banho Planejado"
                         style="object-position: center 30%;">
                     <div class="bento-overlay">
                         <h3>Organização e Estilo</h3>
@@ -198,28 +209,29 @@
 
             <div class="interactive-showcase fade-in-up delay-1">
                 <div class="showcase-image">
-                    <img id="showcase-img" src="Assets/Imagens Idélli/Personalização/Madeirado Claro.png"
+                    <img id="showcase-img" src="Assets/Imagens Idélli/Personalização/Madeirado Claro.webp"
                         alt="Ambiente com material selecionado">
                     <div class="showcase-loader"></div>
                 </div>
 
                 <div class="materials-selector">
                     <button class="material-btn active"
-                        data-img="Assets/Imagens Idélli/Personalização/Madeirado Claro.png" data-name="Madeirado Claro">
+                        data-img="Assets/Imagens Idélli/Personalização/Madeirado Claro.webp"
+                        data-name="Madeirado Claro">
                         <span class="material-color" style="background-color: #C19A6B;"></span>
                         <span class="material-name">Madeirado Claro</span>
                     </button>
-                    <button class="material-btn" data-img="Assets/Imagens Idélli/Personalização/Lacca Clara.png"
+                    <button class="material-btn" data-img="Assets/Imagens Idélli/Personalização/Lacca Clara.webp"
                         data-name="Lacca Clara">
                         <span class="material-color" style="background-color: #F0F0F0;"></span>
                         <span class="material-name">Lacca Clara</span>
                     </button>
-                    <button class="material-btn" data-img="Assets/Imagens Idélli/Personalização/Lacca Cinza.png"
+                    <button class="material-btn" data-img="Assets/Imagens Idélli/Personalização/Lacca Cinza.webp"
                         data-name="Lacca Cinza">
                         <span class="material-color" style="background-color: #9E9E9E;"></span>
                         <span class="material-name">Lacca Cinza</span>
                     </button>
-                    <button class="material-btn" data-img="Assets/Imagens Idélli/Personalização/Madeirado escuro.png"
+                    <button class="material-btn" data-img="Assets/Imagens Idélli/Personalização/Madeirado escuro.webp"
                         data-name="Madeirado Escuro">
                         <span class="material-color" style="background-color: #5C4033;"></span>
                         <span class="material-name">Madeirado Escuro</span>
@@ -257,7 +269,7 @@
                 </div>
             </div>
             <div class="fabrica-image fade-in-up delay-2">
-                <img src="Assets/Imagens Idélli/Sala_03.jpeg"
+                <img src="Assets/Imagens Idélli/Sala_03.webp"
                     alt="Detalhe do acabamento e puxador Idélli conectando a chapa de madeira">
             </div>
         </div>
@@ -428,7 +440,7 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-col brand-col">
-                <img src="Assets/Imagens Idélli/IDELLI-JARDIM-EUROPA-BRANCO-300x98.png" alt="Idélli Logo"
+                <img src="Assets/Imagens Idélli/IDELLI-JARDIM-EUROPA-BRANCO-300x98.webp" alt="Idélli Logo"
                     class="footer-logo">
                 <p class="footer-text">Design exclusivo que transforma espaços em lares sofisticados. Referência em
                     móveis planejados no Jardim Europa.</p>
@@ -462,7 +474,7 @@
     </footer>
 
     <!-- Custom JS -->
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
