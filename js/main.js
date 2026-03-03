@@ -1,9 +1,3 @@
-import Clarity from '@microsoft/clarity';
-
-// Inicialização do Microsoft Clarity
-// Substitua 'SEU_PROJECT_ID_AQUI' pelo ID do seu projeto fornecido no painel do Clarity
-Clarity.init('vprs8nwe5s');
-
 document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
        1. Sticky Header & Mobile Menu Functionality
